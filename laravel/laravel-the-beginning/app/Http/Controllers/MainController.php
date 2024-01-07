@@ -10,12 +10,12 @@ class MainController extends Controller
 {
     public function showApp()
     {
-        return view('layouts/app');
+        return view('layouts/app_for_task1');
     }
 
     public function showForm()
     {
-        return view('form');
+        return view('form_for_task1');
     }
 
     public function showData()
@@ -29,7 +29,7 @@ class MainController extends Controller
             }
         }
 
-        return view('data', ['data' => $data]);
+        return view('data_for_task1', ['data' => $data]);
     }
 
 
@@ -43,7 +43,7 @@ class MainController extends Controller
 
         // Проверка на наличие ошибок валидации
         if ($validator->fails()) {
-            return redirect('/form')->with('error', 'Ошибка, недостаточно символов в пароле');
+            return redirect('/form_for_task1')->with('error', 'Ошибка, недостаточно символов в пароле');
         }
 
         // Формирование массива данных
@@ -57,7 +57,7 @@ class MainController extends Controller
         Storage::put($filename, json_encode($data));
 
         // Возвращаем успешное сообщение с использованием сессии
-        return redirect('/form')->with('message', 'Данные успешно отправлены');
+        return redirect('/form_for_task1')->with('message', 'Данные успешно отправлены');
     }
 
 }

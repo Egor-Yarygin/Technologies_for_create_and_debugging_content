@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MainController;
 
-Route::get('/', [MainController::class, 'showApp']);
+Route::get('/app_for_task1', [MainController::class, 'showApp']);
 
 // Роут для отображения данных
-Route::get('/data', [MainController::class, 'showData']);
+Route::get('/data_for_task1', [MainController::class, 'showData']);
 
 // Роут для отображения формы
-Route::get('/form', [MainController::class, 'showForm']);
+Route::get('/form_for_task1', [MainController::class, 'showForm']);
 
 // Роут для POST-запроса
 Route::post('/post', [MainController::class, 'post']);

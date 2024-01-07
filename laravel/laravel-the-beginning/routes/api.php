@@ -21,6 +21,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+
 
 Route::get('/api/products', [Controller::class, 'index']);
 Route::post('/api/products', [Controller::class, 'store']);
+
+
+Route::apiResource('categories', CategoryController::class);
+
+
+Route::apiResource('comments', CommentController::class);
+
+
+Route::apiResource('posts', PostController::class);
+
+
+Route::apiResource('users', UserController::class);
+
